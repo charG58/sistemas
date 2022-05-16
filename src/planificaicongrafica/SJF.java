@@ -13,8 +13,7 @@ import javax.swing.JOptionPane;
  * @author Eduardo
  */
 public class SJF {
-    public static void main(String[] args){
-       
+    public void inicio(){
         Scanner sc = new Scanner(System.in);
         int n = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de procesos: ",JOptionPane.QUESTION_MESSAGE));
         int pid[] = new int[n];
@@ -84,3 +83,5 @@ public class SJF {
         
     }
 }
+    
+

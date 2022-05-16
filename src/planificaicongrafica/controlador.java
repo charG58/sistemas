@@ -36,6 +36,7 @@ public class controlador extends JFrame{
             tiempoS=Integer.parseInt(JOptionPane.showInputDialog(null,"Y su tiempo de servicio:","Tiempo servicio del proceos",JOptionPane.QUESTION_MESSAGE));
             Temp.add(new modelo(horaLl,tiempoS));
         }
+        //Se crea un boolean para almacena los datos de hora de llegada pedidos anteriormente
         boolean on = true;
         ArrayList<modelo>fifo=new ArrayList<>();
         while(on){

@@ -5,6 +5,9 @@
  */
 package planificaicongrafica;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Eduardo
@@ -45,13 +48,28 @@ public class VISTA extends javax.swing.JFrame {
         });
 
         btnreloj.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnreloj.setText("RELOJ");
+        btnreloj.setText("ROUND ROBIN");
+        btnreloj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnrelojActionPerformed(evt);
+            }
+        });
 
         btnsjf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnsjf.setText("SJF");
+        btnsjf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsjfActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton4.setText("SALIR");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
         jLabel1.setText("ALGORTIMOS DE PLANIFICACIÓN");
@@ -61,21 +79,22 @@ public class VISTA extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
+                        .addGap(52, 52, 52)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
                                 .addComponent(btnfifo)
                                 .addGap(161, 161, 161)
-                                .addComponent(btnsjf))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnreloj)
-                                .addGap(132, 132, 132)
-                                .addComponent(jButton4)))))
-                .addContainerGap(30, Short.MAX_VALUE))
+                                .addComponent(btnsjf))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(btnreloj)
+                        .addGap(132, 132, 132)
+                        .addComponent(jButton4)))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,11 +105,11 @@ public class VISTA extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnfifo)
                     .addComponent(btnsjf))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnreloj)
                     .addComponent(jButton4))
-                .addGap(85, 85, 85))
+                .addGap(81, 81, 81))
         );
 
         pack();
@@ -98,8 +117,24 @@ public class VISTA extends javax.swing.JFrame {
 
     private void btnfifoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfifoActionPerformed
         // TODO add your handling code here:
+        new controlador();
         
     }//GEN-LAST:event_btnfifoActionPerformed
+
+    private void btnrelojActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrelojActionPerformed
+        // TODO add your handling code here:
+        new Ruond().setVisible(true);
+    }//GEN-LAST:event_btnrelojActionPerformed
+
+    private void btnsjfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsjfActionPerformed
+        // TODO add your handling code here:
+        new SJF().inicio();
+    }//GEN-LAST:event_btnsjfActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+        System.exit(0);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
